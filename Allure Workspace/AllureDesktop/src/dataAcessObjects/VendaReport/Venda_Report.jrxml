@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioBrancoVenda" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5d33688e-9fa6-4f38-83fb-56fb4c323ea1">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="48"/>
+	<parameter name="cod_venda" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from CupomInfo  where id_Pedido_VendaRegistro_fk_PedidoItem = 7]]>
+	</queryString>
+	<field name="Data_venda" class="java.sql.Timestamp"/>
+	<field name="valor_total" class="java.lang.Double"/>
+	<field name="valor_pago" class="java.lang.Double"/>
+	<field name="valor_troco" class="java.lang.Double"/>
+	<field name="id_produto_livro_fk_PedidoItem" class="java.lang.Integer"/>
+	<field name="id_Pedido_VendaRegistro_fk_PedidoItem" class="java.lang.Integer"/>
+	<field name="quantidade" class="java.lang.Integer"/>
+	<field name="preco_item" class="java.lang.Double"/>
+	<field name="Nome_cli" class="java.lang.String"/>
+	<field name="Nome_func" class="java.lang.String"/>
+	<field name="nome_pagamento" class="java.lang.String"/>
+	<field name="Nome_Produto_livro" class="java.lang.String"/>
+	<group name="cod_venda">
+		<groupExpression><![CDATA[$F{id_Pedido_VendaRegistro_fk_PedidoItem}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<textField>
+				<reportElement x="124" y="0" width="302" height="20" uuid="c7dceb60-3ce6-47dd-b824-2e14c731bb49"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["LIVRARIA ALLURE COMERCIO LTDA"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="18" y="101" width="243" height="19" uuid="77488efe-5c5b-41d3-9972-68203f8f103a"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CNPJ: 83.926.743/0001-14"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="79" y="33" width="405" height="19" uuid="3ccf47a7-8b0e-4d2f-8eca-13ad377b563d"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Rua Virginia Aurora Rodrigues, 281 Centro - CEP: 06097-015"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="246" y="64" width="93" height="19" uuid="83b19dac-9128-43da-8e25-079536cc8f2f"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Osasco - SP"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="11" y="131" width="525" height="1" uuid="4faaeb14-ae93-4b8d-bb4d-9c8f986352cb"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="134" splitType="Stretch">
+			<textField>
+				<reportElement x="406" y="19" width="126" height="20" uuid="a159fe61-9e19-4062-9412-c575c2acf4f1"/>
+				<textElement>
+					<font fontName="Arial" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id_Pedido_VendaRegistro_fk_PedidoItem}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="11" y="98" width="135" height="20" uuid="21e7ec11-5307-44cf-9059-eb897f1076e3"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["FUNCIONÁRIO:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="98" width="122" height="20" uuid="e06b2d82-7b1f-4f19-b455-f53cb54f6b92"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nome_func}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="11" y="57" width="135" height="20" uuid="0330b02d-eec7-4263-87f1-112d1d2cb388"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CLIENTE:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="57" width="122" height="20" uuid="29dbec28-b072-4714-8d3b-19bcb5c54979"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nome_cli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="19" y="19" width="122" height="20" uuid="b1b90c5e-1c2f-48bf-92a5-9cda2b5e3789"/>
+				<textElement>
+					<font fontName="Arial" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Data_venda}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="11" y="133" width="525" height="1" uuid="c4fee634-c4c3-4e44-94bc-974c6f83f793"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="91" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="57" width="111" height="20" uuid="b2f2b589-098d-44a9-86a1-463a5a388679"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["COD. PROD."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="146" y="57" width="119" height="20" uuid="4fa8b1c3-e7bf-40dd-8011-b9a6e5076408"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["NOME PROD."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="488" y="57" width="48" height="20" uuid="48445982-c0a6-4440-b606-d4029ec27fea"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["QTD"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="308" y="57" width="118" height="20" uuid="af0267bc-0b94-46cc-a181-be96f0f57676"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PREÇO UNIT."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="202" y="12" width="143" height="20" uuid="d6fe40b0-b827-4f8b-b353-e6e4f698fcdd"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CUPOM FISCAL"]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="13" width="100" height="20" uuid="b6b4368e-9ec5-4c48-8720-6c4fc7cd79c3"/>
+				<textElement>
+					<font fontName="Arial" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id_produto_livro_fk_PedidoItem}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="146" y="13" width="145" height="20" uuid="e0eb5eb3-6191-47c7-a108-b6071658e3f7"/>
+				<textElement>
+					<font fontName="Arial" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nome_Produto_livro}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;(###0.00)">
+				<reportElement x="308" y="13" width="118" height="20" uuid="fe1f2e54-d914-4429-9c3e-fb6c8f3805e0"/>
+				<textElement>
+					<font fontName="Arial" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{preco_item}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="484" y="13" width="64" height="20" uuid="d014d765-7ab3-430a-83ad-97caf70ca583"/>
+				<textElement>
+					<font fontName="Arial" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantidade}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="23" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="142" splitType="Stretch">
+			<textField pattern="###0.00;(###0.00)">
+				<reportElement x="431" y="13" width="116" height="20" uuid="9d94ce41-c19c-4d15-a521-6ede6a610099"/>
+				<textElement>
+					<font fontName="Arial" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valor_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="11" y="13" width="130" height="20" uuid="049c42aa-c765-4a41-bfac-d62331965b3f"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TOTAL(R\$):"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="11" y="0" width="525" height="2" uuid="b2f4bb3b-d975-491d-a253-78c14f5a4a62"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+			<textField pattern="###0.00;(###0.00)">
+				<reportElement x="431" y="40" width="116" height="20" uuid="e07a7394-f573-4df0-a0f3-d98fffc48641"/>
+				<textElement>
+					<font fontName="Arial" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valor_pago}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="11" y="40" width="167" height="20" uuid="a9b44eb6-7ed7-4908-9127-fbba207126c2"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Valor Pago:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="11" y="73" width="167" height="20" uuid="e2faa1cc-ab7f-4303-a94e-fb4afba0f194"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Troco:"]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="199" y="115" width="167" height="20" uuid="0c81bfa8-1857-4c2c-b439-abfec60d34c7"/>
+				<textElement>
+					<font fontName="Arial" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome_pagamento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="11" y="115" width="167" height="20" uuid="380fc863-1dfb-43dc-8508-3e98f2ca13c8"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Forma Pagamento:"]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;(###0.00)">
+				<reportElement x="431" y="73" width="116" height="20" uuid="51d01243-abd0-423c-ba63-c4e36ada225b"/>
+				<textElement>
+					<font fontName="Arial" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valor_troco}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
